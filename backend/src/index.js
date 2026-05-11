@@ -4,6 +4,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import authRoutes from './routes/authRoutes.js'
 import articleRoutes from './routes/articleRoutes.js'
+import quizRoutes from './routes/quizRoutes.js'
 dotenv.config()
 
 const app = express()
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', authRoutes)
 app.use('/api/articles', articleRoutes)
+app.use('/api/quizzes', quizRoutes)
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
