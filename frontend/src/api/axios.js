@@ -13,6 +13,7 @@ api.interceptors.request.use((config) => {
 export default api
 
 
+cd C:\Users\arushi\OneDrive\Desktop\My_Startup
 git add .
-git commit -m "fix: clean axios.js"
+git commit -m "fix: force redeploy"
 git push
