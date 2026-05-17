@@ -6,16 +6,13 @@ const api = axios.create({
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token')
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`
-  }
+  if (token) config.headers.Authorization = `Bearer ${token}`
   return config
 })
 
 export default api
 
 
-cd C:\Users\arushi\OneDrive\Desktop\My_Startup
 git add .
-git commit -m "feat: update API URL to Railway"
+git commit -m "fix: clean axios.js"
 git push
