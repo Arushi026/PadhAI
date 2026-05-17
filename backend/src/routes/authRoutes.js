@@ -22,3 +22,4 @@ router.get('/make-admin/:email', async (req, res) => {
 })
 
 export default router
+

@@ -89,14 +89,19 @@ export const submitQuiz = async (req, res) => {
     })
 
     const percentage = Math.round((score / quiz.questions.length) * 100)
+let message = 'Quiz submitted!'
+if (percentage === 100) message = 'Perfect score! You are a genius! 🏆'
+else if (percentage >= 80) message = 'Excellent! Almost perfect! 🌟'
+else if (percentage >= 60) message = 'Good job! You passed! 🎯'
+else message = 'Don\'t give up! Try again 💪'
 
-    res.json({
-      message: 'Quiz submitted!',
-      score,
-      total: quiz.questions.length,
-      percentage,
-      passed: percentage >= 60
-    })
+res.json({
+  message,
+  score,
+  total: quiz.questions.length,
+  percentage,
+  passed: percentage >= 60
+})
   } catch (error) {
     res.status(500).json({ message: error.message })
   }
