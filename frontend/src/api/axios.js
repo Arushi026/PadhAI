@@ -1,6 +1,6 @@
 import axios from 'axios'
 const api = axios.create({
-  baseURL: 'https://padhai-production.up.railway.app/api'
+  baseURL: 'https://padhai-uk5w.onrender.com/api'
 })
 
 api.interceptors.request.use((config) => {
